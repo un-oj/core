@@ -18,6 +18,6 @@ jobs:
 
       - run: bun i --frozen-lockfile
       - run: bun run build
-      - run: bunx jsr publish
       - run: npm config set //registry.npmjs.org/:_authToken "${{ secrets.NPM_ACCESS_TOKEN }}"
       - run: bunx npm publish
+      - run: bunx jsr publish

@@ -6,7 +6,7 @@ export default ts({
     'ts/explicit-function-return-type': [2],
   },
 }, {
-  files: ['scripts/*.ts'],
+  files: ['*.md', 'scripts/*.ts'],
   rules: {
     'no-console': [0],
     'ts/explicit-function-return-type': [0],

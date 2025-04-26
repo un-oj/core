@@ -6,7 +6,7 @@
   "author": "UnOJ Team",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/un-oj/core"
+    "url": "git+https://github.com/un-oj/core.git"
   },
   "keywords": [
     "un-oj",
@@ -25,7 +25,8 @@
     }
   },
   "publishConfig": {
-    "provenance": true
+    "provenance": true,
+    "access": "public"
   },
   "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
