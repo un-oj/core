@@ -1,0 +1,57 @@
+{
+  "name": "un-oj",
+  "type": "module",
+  "version": "0.1.0",
+  "description": "Unified Online Judge information collector.",
+  "author": "UnOJ Team",
+  "license": "MIT",
+  "repository": {
+    "url": "https://github.com/un-oj/core"
+  },
+  "keywords": [
+    "un-oj",
+    "oj",
+    "online-judge",
+    "competitive-programming"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    },
+    "./platforms/*": {
+      "types": "./dist/platforms/*.d.ts",
+      "import": "./dist/platforms/*.js"
+    }
+  },
+  "publishConfig": {
+    "provenance": true
+  },
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "unbuild",
+    "dev": "bun ./scripts/dev.ts",
+    "lint": "eslint ."
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "ofetch": "^1.4.1"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^4.12.0",
+    "@commitlint/cli": "^19.8.0",
+    "@commitlint/config-conventional": "^19.8.0",
+    "@tsconfig/bun": "^1.0.7",
+    "@typed-sigterm/eslint-config": "^1.4.1",
+    "@types/bun": "^1.2.10",
+    "bumpp": "^10.1.0",
+    "eslint": "^9.24.0",
+    "husky": "^9.1.7",
+    "typescript": "^5.8.3",
+    "unbuild": "^3.5.0"
+  }
+}
