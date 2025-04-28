@@ -46,7 +46,7 @@ export default class Luogu extends Platform {
     const path = `/problem/${id}`;
     let data: any;
     try {
-      data = await this.ofetch(path, { responseType: 'json' });
+      ({ data } = await this.ofetch(path, { responseType: 'json' }));
     } catch (e) {
       if (e instanceof FetchError && e.statusCode === 404)
         throw new NotFoundError('problem');

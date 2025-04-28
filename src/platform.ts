@@ -1,4 +1,3 @@
-/* eslint-disable jsdoc/require-returns-check */
 import type { $Fetch, CreateFetchOptions, FetchOptions } from 'ofetch';
 import { ofetch } from 'ofetch';
 import { addHeaders, UnOJError, version } from './utils';
@@ -89,7 +88,7 @@ export abstract class Platform {
    * @returns The problem object.
    */
   getProblem(_id: string): Promise<Problem> {
-    throw new UnsupportedError();
+    return Promise.reject(new UnsupportedError());
   }
 }
 

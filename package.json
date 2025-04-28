@@ -36,7 +36,9 @@
   "scripts": {
     "build": "unbuild",
     "dev": "bun ./scripts/dev.ts",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit",
+    "test": "bun test"
   },
   "dependencies": {
     "cheerio": "^1.0.0",

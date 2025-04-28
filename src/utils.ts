@@ -1,4 +1,4 @@
-export const version = '0.1.0'; // bumpp
+export { version } from '../package.json';
 
 /**
  * Parses a human-readable time string.

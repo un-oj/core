@@ -1,6 +1,10 @@
 {
   "extends": "@tsconfig/bun/tsconfig.json",
   "compilerOptions": {
+    "paths": {
+      "@un-oj/core": ["./src"],
+      "@un-oj/core/*": ["./src/*"]
+    },
     "noPropertyAccessFromIndexSignature": false
   }
 }
