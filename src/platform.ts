@@ -53,7 +53,6 @@ export interface PlatformOptions {
 
 /** An Online Judge platform. */
 export abstract class Platform {
-  abstract readonly name: string;
   readonly ofetch: $Fetch;
   readonly baseURL: string;
 
@@ -82,20 +81,20 @@ export abstract class Platform {
    * @returns The problem object.
    */
   getProblem(_id: string): Promise<Problem> {
-    throw new UnsupportedError(this.name, 'getProblem');
+    throw new UnsupportedError();
   }
 }
 
 /** An error that indicates a platform does not support a certain operation. */
 export class UnsupportedError extends UnOJError {
-  constructor(platform: string, operation: string) {
-    super(`${platform} does not support '${operation}'`);
+  constructor() {
+    super('Unsupported operation');
   }
 }
 
 /** An error that indicates a platform does not have a certain resource. */
 export class NotFoundError extends UnOJError {
-  constructor(platform: string, thing: string, id: string) {
-    super(`${platform} does not have ${thing} '${id}'`);
+  constructor(public thing: string) {
+    super(`Cannot find ${thing}`);
   }
 }

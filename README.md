@@ -6,6 +6,7 @@ Unified Online Judge information collector.
 
 Install `un-oj` from NPM, or `@un-oj/core` from JSR.
 
+<!-- eslint-disable -->
 ```ts
 import Codeforces from '../src/platforms/codeforces';
 
@@ -13,6 +14,7 @@ const cf = new Codeforces();
 
 console.log(await cf.getProblem('1A'));
 ```
+<!-- eslint-enable -->
 
 Documents are available on JSR.
 

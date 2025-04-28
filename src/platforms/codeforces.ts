@@ -30,7 +30,7 @@ export default class Codeforces extends Platform {
       .not('.sample-test')
       .html();
     if (!description)
-      throw new NotFoundError(this.name, 'problem', id);
+      throw new NotFoundError('problem');
 
     const examples: ProblemIOSample[] = [];
     for (const el of body.find('.sample-test').children()) {

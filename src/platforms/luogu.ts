@@ -22,8 +22,6 @@ export type Problem = BaseProblem<ProblemDescriptionObject, number[], Difficulty
 export default class Luogu extends Platform {
   static readonly DEFAULT_BASE_URL = 'https://www.luogu.com.cn';
 
-  name = 'Luogu';
-
   constructor(options?: PlatformOptions) {
     super({
       ...options,
@@ -44,7 +42,7 @@ export default class Luogu extends Platform {
       data = await this.ofetch(path, { responseType: 'json' });
     } catch (e) {
       if (e instanceof FetchError && e.statusCode === 404)
-        throw new NotFoundError(this.name, 'problem', id);
+        throw new NotFoundError('problem');
       throw new UnOJError(`Failed to fetch problem ${id}`, { cause: e });
     }
 
