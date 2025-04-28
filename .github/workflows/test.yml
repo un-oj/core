@@ -1,3 +1,5 @@
+name: Test
+
 on:
   pull_request:
     branches: [main]
@@ -15,7 +17,7 @@ jobs:
 
       - run: bun i --frozen-lockfile
       - run: bun run type-check
-  
+
   unit-test:
     runs-on: ubuntu-latest
     steps:
