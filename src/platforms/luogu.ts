@@ -5,6 +5,7 @@ import { addHeaders, UnOJError } from '../utils';
 
 export type Difficulty = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
+/** Maps {@link Difficulty} to a string label in Chinese. */
 export const DifficultyLabel: Record<Difficulty, string> = {
   0: '暂无评定',
   1: '入门',
@@ -16,9 +17,14 @@ export const DifficultyLabel: Record<Difficulty, string> = {
   7: 'NOI/NOI+/CTSC',
 };
 
+/** Luogu-specific problem type. */
 export type Problem = BaseProblem<ProblemDescriptionObject, number[], Difficulty>;
 
-/** [Luogu](https://www.luogu.com.cn) platform. */
+/**
+ * [Luogu](https://www.luogu.com.cn) platform.
+ *
+ * I18n is supported.
+ */
 export default class Luogu extends Platform {
   static readonly DEFAULT_BASE_URL = 'https://www.luogu.com.cn';
 
@@ -35,6 +41,7 @@ export default class Luogu extends Platform {
     }, Luogu.DEFAULT_BASE_URL);
   }
 
+  /** Fetches a problem from Luogu using internal API. */
   override async getProblem(id: string): Promise<Problem> {
     const path = `/problem/${id}`;
     let data: any;

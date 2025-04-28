@@ -3,18 +3,22 @@ import * as cheerio from 'cheerio';
 import { NotFoundError, Platform } from '../platform';
 import { parseMemory, parseTime } from '../utils';
 
+/** Codeforces-specific problem type. */
 export type Problem = BaseProblem<string, number, number>;
 
 /** [Codeforces](https://codeforces.com) platform. */
 export default class Codeforces extends Platform {
   static readonly DEFAULT_BASE_URL = 'https://codeforces.com';
 
-  name = 'Codeforces';
-
   constructor(options?: PlatformOptions) {
     super(options, Codeforces.DEFAULT_BASE_URL);
   }
 
+  /**
+   * Fetches a problem from Codeforces, extracting information from HTML.
+   *
+   * Automatically switches to gym mode if {@link id} > `100000`.
+   */
   override async getProblem(id: string): Promise<Problem> {
     const contest = Number.parseInt(id);
     const num = id.replace(String(contest), '');

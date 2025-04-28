@@ -5,11 +5,13 @@ import { addHeaders, UnOJError, version } from './utils';
 
 export type ProblemType = 'traditional' | 'interactive' | 'communication' | 'submission';
 
+/** A sample input/output pair for a {@link Problem}. */
 export interface ProblemIOSample {
   input: string
   output: string
 }
 
+/** Well-classified {@link Problem} information. */
 export interface ProblemDescriptionObject {
   background: string
   details: string
@@ -18,6 +20,7 @@ export interface ProblemDescriptionObject {
   hint: string
 }
 
+/** General problem information. */
 export interface Problem<
   Desc extends string | ProblemDescriptionObject = string | ProblemDescriptionObject,
   Limits extends number | number[] = number | number[],
@@ -56,7 +59,12 @@ export abstract class Platform {
   readonly ofetch: $Fetch;
   readonly baseURL: string;
 
-  /** I18n locale if supported. */
+  /**
+   * I18n locale if supported.
+   *
+   * Only platforms/methods that explicitly support i18n will use this, and the
+   * format requirements are up to the platform.
+   */
   locale?: string;
 
   constructor(
