@@ -11,7 +11,6 @@ Install `un-oj` from NPM, or `@un-oj/core` from JSR.
 import Codeforces from '../src/platforms/codeforces';
 
 const cf = new Codeforces();
-
 console.log(await cf.getProblem('1A'));
 ```
 <!-- eslint-enable -->

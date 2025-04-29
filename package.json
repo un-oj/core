@@ -34,6 +34,7 @@
     "dist"
   ],
   "scripts": {
+    "prepare": "husky",
     "build": "unbuild",
     "dev": "bun ./scripts/dev.ts",
     "lint": "eslint .",
