@@ -8,7 +8,8 @@ Install `un-oj` from NPM, or `@un-oj/core` from JSR.
 
 <!-- eslint-disable -->
 ```ts
-import Codeforces from '../src/platforms/codeforces';
+import Codeforces from '@un-oj/core/platforms/codeforces'; // If installed from JSR
+// import Codeforces from 'un-oj/platforms/codeforces'; // If installed from NPM
 
 const cf = new Codeforces();
 console.log(await cf.getProblem('1A'));
