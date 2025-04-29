@@ -1,0 +1,233 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AtCoder platform should fetch problem abc403_a 1`] = `
+{
+  "description": 
+"<p>Score : <var>100</var> points</p>
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p>You are given a sequence of positive integers of length <var>N</var>: <var>A=(A_1,A_2,\\dots,A_N)</var>.</p>
+<p>Find the sum of the odd-indexed elements of <var>A</var>. That is, find <var>A_1 + A_3 + A_5 + \\dots + A_m</var>, where <var>m</var> is the largest odd number not exceeding <var>N</var>.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1 \\le N \\le 100</var>  </li>
+<li><var>1 \\le A_i \\le 100</var>  </li>
+<li>All input values are integers.  </li>
+</ul>
+</section>
+</div>"
+,
+  "difficulty": undefined,
+  "id": "abc403_a",
+  "link": "https://atcoder.jp/contests/abc403/tasks/abc403_a",
+  "memoryLimit": 1073741824,
+  "samples": [],
+  "tags": undefined,
+  "timeLimit": 2000,
+  "title": "Odd Position Sum",
+  "type": "traditional",
+}
+`;
+
+exports[`AtCoder platform should fetch problem abc403_a with ja locale 1`] = `
+{
+  "description": 
+"<p>配点 : <var>100</var> 点</p>
+
+<div class="part">
+<section>
+<h3>問題文</h3><p>長さ <var>N</var> の正整数列 <var>A=(A_1,A_2,\\dots,A_N)</var> が与えられます。</p>
+<p><var>A</var> の奇数番目の要素の総和を求めてください。すなわち、<var>N</var> 以下の最大の奇数を <var>m</var> としたとき <var>A_1+A_3+A_5+\\ldots+A_m</var> を求めてください。</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>制約</h3><ul>
+<li><var> 1\\leq N\\leq 100</var></li>
+<li><var> 1\\leq A_i\\leq 100</var></li>
+<li>入力は全て整数</li>
+</ul>
+</section>
+</div>"
+,
+  "difficulty": undefined,
+  "id": "abc403_a",
+  "link": "https://atcoder.jp/contests/abc403/tasks/abc403_a",
+  "memoryLimit": 1073741824,
+  "samples": [],
+  "tags": undefined,
+  "timeLimit": 2000,
+  "title": "Odd Position Sum",
+  "type": "traditional",
+}
+`;
+
+exports[`AtCoder platform shoud fetch interactive problem arc070_d 1`] = `
+{
+  "description": 
+"<p>Score : <var>1300</var> points</p>
+
+<div class="part">
+<section>
+<h3>Problem Statement</h3><p><font color="red"><strong>This is an interactive task.</strong></font></p>
+<p>AtCoDeer the deer came across <var>N</var> people. For convenience, the people are numbered <var>0</var> through <var>N-1</var>.
+Among them, <var>A</var> are <em>honest</em> and the remaining <var>B(=N-A)</var> are <em>unkind</em>.
+All of these <var>N</var> people know who are honest and who are unkind, but AtCoDeer only knows that there are <var>A</var> honest and <var>B</var> unkind people.
+He is trying to identify all of the honest people by asking questions to these <var>N</var> people.
+For one question, AtCoDeer selects <var>a</var> and <var>b</var> <var>(0≤a,b≤N-1)</var>, and asks person <var>a</var> the following question: "Is person <var>b</var> honest?"</p>
+<p>An honest person will always answer correctly by "Yes" or "No".
+An unkind person, however, will answer by selecting "Yes" or "No" <strong>arbitrarily</strong>.
+That is, the algorithm used by an unkind person may not be simple one such as always lying or giving random fifty-fifty answers.</p>
+<p>AtCoDeer can ask at most <var>2N</var> questions. He will ask questions one by one, and the responses to the previous questions can be used when deciding the next question to ask.</p>
+<p>Identify all of the honest people.
+If it is impossible (more formally, if, for any strategy of asking <var>2N</var> questions, there exists a strategy for unkind people to answer the questions so that there are two or more possible sets of the honest people), report that fact.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Constraints</h3><ul>
+<li><var>1≤A,B≤2000</var></li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Input and Output</h3><p>First, <var>A</var> and <var>B</var> are given from Standard Input in the following format:</p>
+<pre><var>A</var> <var>B</var>
+</pre>
+
+<p>If identifying the honest people is impossible, the program must immediately print the following output and terminate itself:</p>
+<pre>Impossible
+</pre>
+
+<p>Otherwise, the program shall ask questions.
+Each question must be written to Standard Output in the following format:</p>
+<pre>? <var>a</var> <var>b</var>
+</pre>
+
+<p>Here, <var>a</var> and <var>b</var> must be integers between <var>0</var> and <var>N-1</var> (inclusive).
+The response to the question will be given from Standard Input in the following format:</p>
+<pre><var>ans</var>
+</pre>
+
+<p>Here, <var>ans</var> is either <code>Y</code> or <code>N</code>.
+<code>Y</code> represents "Yes"; <code>N</code> represents "No".</p>
+<p>Finally, the answer must be written to Standard Output in the following format:</p>
+<pre>! <var>s_0s_1...s_{N-1}</var>
+</pre>
+
+<p>Here, <var>s_i</var> must be <code>1</code> if person <var>i</var> is honest, and <code>0</code> if person <var>i</var> is unkind.</p>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Judgement</h3><ul>
+<li><font color="red"><strong>After each output, you must flush Standard Output.</strong></font> Otherwise you may get <code>TLE</code>.</li>
+<li>After you print the answer, the program must be terminated immediately. Otherwise, the behavior of the judge is undefined.</li>
+<li>When your output is invalid or incorrect, the behavior of the judge is undefined (it does not necessarily give <code>WA</code>).</li>
+</ul>
+</section>
+</div>
+
+<div class="part">
+<section>
+<h3>Samples</h3><p>In the following sample, <var>A = 2</var>, <var>B = 1</var>, and the answer is <code>101</code>.</p>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th align="left">Input</th>
+<th align="left">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><var>2</var> <var>1</var></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><var>?</var> <var>0</var> <var>1</var></td>
+</tr>
+<tr>
+<td align="left"><var>N</var></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><var>?</var> <var>0</var> <var>2</var></td>
+</tr>
+<tr>
+<td align="left"><var>Y</var></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><var>?</var> <var>1</var> <var>0</var></td>
+</tr>
+<tr>
+<td align="left"><var>Y</var></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><var>?</var> <var>2</var> <var>0</var></td>
+</tr>
+<tr>
+<td align="left"><var>Y</var></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><var>?</var> <var>2</var> <var>2</var></td>
+</tr>
+<tr>
+<td align="left"><var>Y</var></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><var>!</var> <var>101</var></td>
+</tr>
+</tbody>
+</table>
+<p>In the following sample, <var>A = 1</var>, <var>B = 2</var>, and the answer is <code>Impossible</code>.</p>
+<table class="table table-bordered">
+<thead>
+<tr>
+<th align="left">Input</th>
+<th align="left">Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left"><var>1</var> <var>2</var></td>
+<td align="left"></td>
+</tr>
+<tr>
+<td align="left"></td>
+<td align="left"><var>Impossible</var></td>
+</tr>
+</tbody>
+</table></section>
+</div>"
+,
+  "difficulty": undefined,
+  "id": "arc070_d",
+  "link": "https://atcoder.jp/contests/arc070/tasks/arc070_d",
+  "memoryLimit": 268435456,
+  "samples": [],
+  "tags": undefined,
+  "timeLimit": 2000,
+  "title": "HonestOrUnkind",
+  "type": "interactive",
+}
+`;

@@ -18,17 +18,22 @@ export const DifficultyLabel: Record<Difficulty, string> = {
 };
 
 /** Luogu-specific problem type. */
-export type Problem = BaseProblem<ProblemDescriptionObject, number[], Difficulty>;
+export type Problem = BaseProblem<
+  ProblemDescriptionObject,
+  number[],
+  Difficulty,
+  number[]
+>;
 
 /**
  * [Luogu](https://www.luogu.com.cn) platform.
  *
  * I18n is supported.
  */
-export default class Luogu extends Platform {
+export default class Luogu extends Platform<string> {
   static readonly DEFAULT_BASE_URL = 'https://www.luogu.com.cn';
 
-  constructor(options?: PlatformOptions) {
+  constructor(options?: PlatformOptions<string>) {
     super({
       ...options,
       ofetchDefaults: {
@@ -94,7 +99,7 @@ export default class Luogu extends Platform {
       timeLimit: data.problem.limits.time,
       memoryLimit: (data.problem.limits.memory as number[]).map(v => v * 1024),
       difficulty: data.problem.difficulty as Difficulty,
-      tags: tags.map(String),
+      tags,
     };
   }
 }

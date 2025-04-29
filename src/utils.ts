@@ -9,13 +9,19 @@ export function parseTime(s: string): number | undefined {
   const val = Number.parseInt(s);
   if (Number.isNaN(val))
     return;
-  if (s === `${val} second` || s === `${val} seconds`)
-    return val * 1000;
+  switch (s) {
+    case `${val} second`:
+    case `${val} seconds`:
+    case `${val} sec`:
+    case `${val} secs`:
+      return val * 1000;
+  }
 }
 
 const MEMORY_UNITS: Record<string, number> = {
   megabyte: 1024 * 1024,
   megabytes: 1024 * 1024,
+  MB: 1024 * 1024,
 };
 
 /**

@@ -4,7 +4,12 @@ import { NotFoundError, Platform } from '../platform';
 import { parseMemory, parseTime } from '../utils';
 
 /** Codeforces-specific problem type. */
-export type Problem = BaseProblem<string, number, number>;
+export type Problem = BaseProblem<
+  string,
+  number | undefined,
+  number | undefined,
+  string[]
+>;
 
 /** [Codeforces](https://codeforces.com) platform. */
 export default class Codeforces extends Platform {
@@ -58,7 +63,7 @@ export default class Codeforces extends Platform {
       timeLimit: parseTime(body.find('.time-limit').contents().last().text()),
       memoryLimit: parseMemory(body.find('.memory-limit').contents().last().text()),
 
-      difficulty: Number(sidebar.find('.tag-box[title="Difficulty"]').text().trim().slice(1)),
+      difficulty: Number(sidebar.find('.tag-box[title="Difficulty"]').text().trim().slice(1)) || undefined,
       tags: sidebar.find('.tag-box').not('[title="Difficulty"]').contents().map(
         (_, el) => $(el).text().trim(),
       ).get(),

@@ -14,6 +14,12 @@ describe('Codeforces platform', () => {
     expect(await cf.getProblem('2050E')).toMatchSnapshot();
   });
 
+  it('should fetch interactive problem 1486C2', async () => {
+    const p = await cf.getProblem('1486C2');
+    expect(p.type).toBe('interactive');
+    expect(p).toMatchSnapshot();
+  });
+
   it('should fetch gym problem 105863A', async () => {
     expect(await cf.getProblem('105863A')).toMatchSnapshot();
   });

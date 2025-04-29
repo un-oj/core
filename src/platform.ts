@@ -22,24 +22,25 @@ export interface ProblemDescriptionObject {
 /** General problem information. */
 export interface Problem<
   Desc extends string | ProblemDescriptionObject = string | ProblemDescriptionObject,
-  Limits extends number | number[] = number | number[],
-  Difficulty extends string | number = string | number,
+  Limits extends number | number[] | undefined = number | number[] | undefined,
+  Difficulty extends string | number | undefined = string | number | undefined,
+  Tags extends string[] | number[] | undefined = string[] | number[] | undefined,
 > {
   id: string
   type: ProblemType
   title: string
   description: Desc
-  link?: string
-  samples?: ProblemIOSample[]
+  link: string
+  samples: ProblemIOSample[]
   /** The time limit in milliseconds. */
-  timeLimit?: Limits
+  timeLimit: Limits
   /** The memory limit in bytes. */
-  memoryLimit?: Limits
-  tags?: string[]
-  difficulty?: Difficulty
+  memoryLimit: Limits
+  tags: Tags
+  difficulty: Difficulty
 }
 
-export interface PlatformOptions {
+export interface PlatformOptions<Locale extends string | never = never> {
   /**
    * {@link ofetch} instance to use.
    *
@@ -50,11 +51,11 @@ export interface PlatformOptions {
   ofetchCreateOptions?: CreateFetchOptions
   baseURL?: string
   /** I18n locale if the platform supports i18n. */
-  locale?: string
+  locale?: Locale
 }
 
 /** An Online Judge platform. */
-export abstract class Platform {
+export abstract class Platform<Locale extends string | never = never> {
   readonly ofetch: $Fetch;
   readonly baseURL: string;
 
@@ -64,11 +65,12 @@ export abstract class Platform {
    * Only platforms/methods that explicitly support i18n will use this, and the
    * format requirements are up to the platform.
    */
-  locale?: string;
+  locale?: Locale;
 
   constructor(
-    options: PlatformOptions | undefined,
+    options: PlatformOptions<Locale> | undefined,
     defaultBaseURL: string,
+    defaultLocale?: Locale,
   ) {
     const { headers } = options?.ofetchDefaults ?? {};
     this.baseURL = options?.baseURL ?? defaultBaseURL;
@@ -79,7 +81,7 @@ export abstract class Platform {
       headers: addHeaders(headers, [['user-agent', `UnOJ/${version}`]]),
     }, options?.ofetchCreateOptions);
 
-    this.locale = options?.locale;
+    this.locale = options?.locale ?? defaultLocale;
   }
 
   /**
