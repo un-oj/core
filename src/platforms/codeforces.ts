@@ -3,12 +3,15 @@ import * as cheerio from 'cheerio';
 import { NotFoundError, Platform } from '../platform';
 import { parseMemory, parseTime } from '../utils';
 
+export type ProblemType = 'traditional' | 'interactive' | 'communication' | 'submission';
+
 /** Codeforces-specific problem type. */
 export type Problem = BaseProblem<
   string,
   number | undefined,
   number | undefined,
-  string[]
+  string[],
+  ProblemType
 >;
 
 /** [Codeforces](https://codeforces.com) platform. */

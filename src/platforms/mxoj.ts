@@ -1,9 +1,9 @@
-import type { Problem as BaseProblem, ProblemType as BaseProblemType, PlatformOptions, ProblemIOSample } from '../platform';
+import type { Problem as BaseProblem, PlatformOptions, ProblemIOSample } from '../platform';
 import { FetchError } from 'ofetch';
 import { NotFoundError, Platform, UnexpectedResponseError } from '../platform';
 import { UnOJError } from '../utils';
 
-export type ProblemType = BaseProblemType | 'objective';
+export type ProblemType = 'traditional' | 'interactive' | 'communication' | 'submission' | 'objective';
 
 /**
  * MXOJ-specific problem type.
@@ -39,7 +39,7 @@ export default class MXOJ extends Platform {
     }
 
     if (!pdoc)
-      throw new UnexpectedResponseError();
+      throw new UnexpectedResponseError(pdoc);
 
     const content = JSON.parse(pdoc.content || '{}').zh || '';
     const samples: ProblemIOSample[] = [];

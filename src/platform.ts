@@ -2,8 +2,6 @@ import type { $Fetch, CreateFetchOptions, FetchOptions } from 'ofetch';
 import { ofetch } from 'ofetch';
 import { addHeaders, UnOJError, version } from './utils';
 
-export type ProblemType = 'traditional' | 'interactive' | 'communication' | 'submission';
-
 /** A sample input/output pair for a {@link Problem}. */
 export interface ProblemIOSample {
   input: string
@@ -25,7 +23,7 @@ export interface Problem<
   Limits extends number | number[] | undefined = number | number[] | undefined,
   Difficulty extends string | number | undefined = string | number | undefined,
   Tags extends string[] | number[] | undefined = string[] | number[] | undefined,
-  Type extends ProblemType = ProblemType,
+  Type extends string = string,
 > {
   id: string
   type: Type
@@ -111,10 +109,7 @@ export class NotFoundError extends UnOJError {
 }
 
 export class UnexpectedResponseError extends UnOJError {
-  constructor(data: unknown) {
-    super(
-      'Unexpected response, see the "Compabtibility" section of README.md of @un-oj/core (or un-oj) package.',
-      { reason: data },
-    );
+  constructor(public data: unknown) {
+    super('Unexpected response, see the "Compabtibility" section of README.md of @un-oj/core (or un-oj) package.');
   }
 }

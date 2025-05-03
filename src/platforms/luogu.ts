@@ -3,6 +3,7 @@ import { FetchError } from 'ofetch';
 import { NotFoundError, Platform } from '../platform';
 import { addHeaders, UnOJError } from '../utils';
 
+export type ProblemType = 'traditional' | 'interactive' | 'communication' | 'submission';
 export type Difficulty = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
 
 /** Maps {@link Difficulty} to a string label in Chinese. */
@@ -22,7 +23,8 @@ export type Problem = BaseProblem<
   ProblemDescriptionObject,
   number[],
   Difficulty,
-  number[]
+  number[],
+  ProblemType
 >;
 
 /**

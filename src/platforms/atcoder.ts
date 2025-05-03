@@ -4,6 +4,7 @@ import { FetchError } from 'ofetch';
 import { NotFoundError, Platform } from '../platform';
 import { parseMemory, parseTime, UnOJError } from '../utils';
 
+export type ProblemType = 'traditional' | 'interactive';
 export type Locale = 'en' | 'ja';
 
 /**
@@ -12,7 +13,12 @@ export type Locale = 'en' | 'ja';
  * For interactive problems, {@link Problem.samples} is empty. The samples are
  * included in {@link Problem.description}.
  */
-export type Problem = BaseProblem<string, number, undefined, undefined>;
+export type Problem = BaseProblem<
+  string,
+  number,
+  undefined,
+  undefined
+>;
 
 /**
  * [AtCoder](https://atcoder.jp) platform.
