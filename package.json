@@ -19,6 +19,7 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
+    "./package.json": "./package.json",
     "./platforms/*": {
       "types": "./dist/platforms/*.d.ts",
       "import": "./dist/platforms/*.js"
