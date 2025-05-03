@@ -1,4 +1,17 @@
-# UnOJ
+<h1 align="center">
+  <img src="./assets/logo.svg" alt="UnOJ" width="100" height="100">
+</h1>
+
+<p align="center">
+  <a href="https://jsr.io/@un-oj/core">
+    <img src="https://jsr.io/badges/@un-oj/core" alt="JSR">
+  </a>
+  <a href="https://npmjs.com/package/un-oj">
+    <img src="https://img.shields.io/npm/v/un-oj?color=444&logo=npm&label=">
+  </a>
+  <img src="https://img.shields.io/github/license/un-oj/core">
+  <img src="https://img.shields.io/github/stars/un-oj/core">
+</p>
 
 Unified Online Judge information collector.
 
