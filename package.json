@@ -1,10 +1,11 @@
 {
   "name": "un-oj",
   "type": "module",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Unified Online Judge information collector.",
   "author": "UnOJ Team",
   "license": "MIT",
+  "homepage": "https://jsr.io/@un-oj/core",
   "repository": {
     "url": "git+https://github.com/un-oj/core.git"
   },
