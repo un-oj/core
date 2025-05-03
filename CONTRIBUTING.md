@@ -59,7 +59,7 @@ We use [SemVer](https://semver.org/spec/v2.0.0.html).
     Tag: `v{version}`
 
     Title: `UnOJ v{version}`
-    
+
     Description: the content added in step 1
 6. Publish the release, GitHub Actions will build and publish the package
 7. If publishing failed:
