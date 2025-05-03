@@ -1,3 +1,8 @@
+/**
+ * [Codeforces](https://codeforces.com) platform.
+ * @module
+ */
+
 import type { Problem as BaseProblem, PlatformOptions, ProblemIOSample } from '../platform';
 import * as cheerio from 'cheerio';
 import { NotFoundError, Platform } from '../platform';
@@ -14,7 +19,7 @@ export type Problem = BaseProblem<
   ProblemType
 >;
 
-/** [Codeforces](https://codeforces.com) platform. */
+/** Codeforces platform. */
 export default class Codeforces extends Platform {
   static readonly DEFAULT_BASE_URL = 'https://codeforces.com';
 

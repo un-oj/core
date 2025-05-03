@@ -3,14 +3,10 @@
 </h1>
 
 <p align="center">
-  <a href="https://jsr.io/@un-oj/core">
-    <img src="https://jsr.io/badges/@un-oj/core" alt="JSR">
-  </a>
-  <a href="https://npmjs.com/package/un-oj">
-    <img src="https://img.shields.io/npm/v/un-oj?color=444&logo=npm&label=">
-  </a>
+  <a href="https://jsr.io/@un-oj/core"><img src="https://jsr.io/badges/@un-oj/core" alt="JSR"></a>
+  <a href="https://npmjs.com/package/un-oj"><img src="https://img.shields.io/npm/v/un-oj?color=444&logo=npm&label="></a>
   <img src="https://img.shields.io/github/license/un-oj/core">
-  <img src="https://img.shields.io/github/stars/un-oj/core">
+  <a href="https://github.com/un-oj/core"><img src="https://img.shields.io/github/stars/un-oj/core"></a>
 </p>
 
 Unified Online Judge information collector.
@@ -29,13 +25,14 @@ console.log(await cf.getProblem('1A'));
 ```
 <!-- eslint-enable -->
 
-Documents are available on JSR.
 Currently supported platforms:
 
-- AtCoder (`/platforms/atcoder`)
-- Codeforces (`/platforms/codeforces`)
-- Luogu (`/platforms/luogu`)
-- MXOJ (`/platforms/mxoj`)
+- [AtCoder](https://jsr.io/@un-oj/core/doc/platforms/atcoder) (`/platforms/atcoder`)
+- [Codeforces](https://jsr.io/@un-oj/core/doc/platforms/codeforces) (`/platforms/codeforces`)
+- [Luogu](https://jsr.io/@un-oj/core/doc/platforms/luogu) (`/platforms/luogu`)
+- [MXOJ](https://jsr.io/@un-oj/core/doc/platforms/mxoj) (`/platforms/mxoj`)
+
+Documents are available on [JSR](https://jsr.io/@un-oj/core/doc).
 
 ## Compataility
 

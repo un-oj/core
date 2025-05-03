@@ -1,3 +1,8 @@
+/**
+ * [Luogu](https://www.luogu.com.cn) platform.
+ * @module
+ */
+
 import type { Problem as BaseProblem, PlatformOptions, ProblemDescriptionObject } from '../platform';
 import { FetchError } from 'ofetch';
 import { NotFoundError, Platform } from '../platform';
@@ -28,7 +33,7 @@ export type Problem = BaseProblem<
 >;
 
 /**
- * [Luogu](https://www.luogu.com.cn) platform.
+ * Luogu platform.
  *
  * I18n is supported.
  */

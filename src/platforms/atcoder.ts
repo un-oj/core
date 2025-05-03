@@ -1,3 +1,8 @@
+/**
+ * [AtCoder](https://atcoder.jp) platform.
+ * @module
+ */
+
 import type { Problem as BaseProblem, PlatformOptions, ProblemIOSample } from '../platform';
 import * as cheerio from 'cheerio';
 import { FetchError } from 'ofetch';
@@ -21,7 +26,7 @@ export type Problem = BaseProblem<
 >;
 
 /**
- * [AtCoder](https://atcoder.jp) platform.
+ * AtCoder platform.
  *
  * I18n is supported.
  */

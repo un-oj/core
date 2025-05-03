@@ -1,3 +1,8 @@
+/**
+ * [MXOJ](https://oier.team) platform.
+ * @module
+ */
+
 import type { Problem as BaseProblem, PlatformOptions, ProblemIOSample } from '../platform';
 import { FetchError } from 'ofetch';
 import { NotFoundError, Platform, UnexpectedResponseError } from '../platform';
@@ -18,7 +23,7 @@ export type Problem = BaseProblem<
   ProblemType
 >;
 
-/** [MXOJ](https://oier.team) platform. */
+/** MXOJ platform. */
 export default class MXOJ extends Platform {
   static readonly DEFAULT_BASE_URL = 'https://oier.team';
 
