@@ -17,6 +17,12 @@ console.log(await cf.getProblem('1A'));
 <!-- eslint-enable -->
 
 Documents are available on JSR.
+Currently supported platforms:
+
+- AtCoder (`/platforms/atcoder`)
+- Codeforces (`/platforms/codeforces`)
+- Luogu (`/platforms/luogu`)
+- MXOJ (`/platforms/mxoj`)
 
 ## Compataility
 

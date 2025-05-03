@@ -25,10 +25,12 @@ export interface Problem<
   Limits extends number | number[] | undefined = number | number[] | undefined,
   Difficulty extends string | number | undefined = string | number | undefined,
   Tags extends string[] | number[] | undefined = string[] | number[] | undefined,
+  Type extends ProblemType = ProblemType,
 > {
   id: string
-  type: ProblemType
+  type: Type
   title: string
+  /** The problem description without the samples (unless otherwise specified). */
   description: Desc
   link: string
   samples: ProblemIOSample[]
@@ -105,5 +107,14 @@ export class UnsupportedError extends UnOJError {
 export class NotFoundError extends UnOJError {
   constructor(public thing: string) {
     super(`Cannot find ${thing}`);
+  }
+}
+
+export class UnexpectedResponseError extends UnOJError {
+  constructor(data: unknown) {
+    super(
+      'Unexpected response, see the "Compabtibility" section of README.md of @un-oj/core (or un-oj) package.',
+      { reason: data },
+    );
   }
 }
