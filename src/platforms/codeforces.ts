@@ -4,13 +4,17 @@
  */
 
 import type { Problem as BaseProblem, PlatformOptions, ProblemIOSample } from '../platform';
-import * as cheerio from 'cheerio';
+import { load } from 'cheerio';
 import { NotFoundError, Platform } from '../platform';
 import { parseMemory, parseTime } from '../utils';
 
 export type ProblemType = 'traditional' | 'interactive' | 'communication' | 'submission';
 
-/** Codeforces-specific problem type. */
+/**
+ * Codeforces-specific problem type.
+ *
+ * Description is HTML.
+ */
 export type Problem = BaseProblem<
   string,
   number | undefined,
@@ -39,7 +43,7 @@ export default class Codeforces extends Platform {
       ? `/gym/${contest}/problem/${num}`
       : `/problemset/problem/${contest}/${num}`;
 
-    const $ = cheerio.load(await this.ofetch(path, { responseType: 'text' }));
+    const $ = load(await this.ofetch(path, { responseType: 'text' }));
     const body = $('.problem-statement'), sidebar = $('#sidebar');
 
     const description = body

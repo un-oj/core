@@ -3,8 +3,9 @@
  * @module
  */
 
+import type { CheerioAPI } from 'cheerio';
 import type { Problem as BaseProblem, PlatformOptions, ProblemIOSample } from '../platform';
-import * as cheerio from 'cheerio';
+import { load } from 'cheerio';
 import { FetchError } from 'ofetch';
 import { NotFoundError, Platform } from '../platform';
 import { parseMemory, parseTime, UnOJError } from '../utils';
@@ -45,9 +46,9 @@ export default class AtCoder extends Platform<Locale> {
     const path = `/contests/${contest}/tasks/${id}`;
     const url = new URL(path, this.baseURL).toString();
 
-    let $: cheerio.CheerioAPI;
+    let $: CheerioAPI;
     try {
-      $ = cheerio.load(await this.ofetch(path, { responseType: 'text' }));
+      $ = load(await this.ofetch(path, { responseType: 'text' }));
     } catch (e) {
       if (e instanceof FetchError && e.statusCode === 404)
         throw new NotFoundError('problem');

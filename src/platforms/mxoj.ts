@@ -13,7 +13,8 @@ export type ProblemType = 'traditional' | 'interactive' | 'communication' | 'sub
 /**
  * MXOJ-specific problem type.
  *
- * Samples are extracted from the problem description, but not removed from it.
+ * - Samples are extracted from the problem description, but not removed from it
+ * - Description is Markdown
  */
 export type Problem = BaseProblem<
   string,

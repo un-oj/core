@@ -6,6 +6,7 @@ import { addHeaders, UnOJError, version } from './utils';
 export interface ProblemIOSample {
   input: string
   output: string
+  hint?: string
 }
 
 /** Well-classified {@link Problem} information. */
@@ -109,7 +110,7 @@ export class NotFoundError extends UnOJError {
 }
 
 export class UnexpectedResponseError extends UnOJError {
-  constructor(public data: unknown) {
+  constructor(public data?: unknown) {
     super('Unexpected response, see the "Compabtibility" section of README.md of @un-oj/core (or un-oj) package.');
   }
 }

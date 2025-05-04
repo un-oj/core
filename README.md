@@ -29,6 +29,7 @@ Currently supported platforms:
 
 - [AtCoder](https://jsr.io/@un-oj/core/doc/platforms/atcoder) (`/platforms/atcoder`)
 - [Codeforces](https://jsr.io/@un-oj/core/doc/platforms/codeforces) (`/platforms/codeforces`)
+- [LeetCode](https://jsr.io/@un-oj/core/doc/platforms/leetcode) (`/platforms/leetcode`)
 - [Luogu](https://jsr.io/@un-oj/core/doc/platforms/luogu) (`/platforms/luogu`)
 - [MXOJ](https://jsr.io/@un-oj/core/doc/platforms/mxoj) (`/platforms/mxoj`)
 

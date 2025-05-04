@@ -23,7 +23,11 @@ export const DifficultyLabel: Record<Difficulty, string> = {
   7: 'NOI/NOI+/CTSC',
 };
 
-/** Luogu-specific problem type. */
+/**
+ * Luogu-specific problem type.
+ *
+ * Description is Markdown.
+ */
 export type Problem = BaseProblem<
   ProblemDescriptionObject,
   number[],
