@@ -271,3 +271,53 @@ exports[`MXOJ platform should fetch objective problem 1`] = `
   "type": "objective",
 }
 `;
+
+exports[`MXOJ platform should fetch problem 1`] = `
+{
+  "description": 
+"### 题目描述
+
+你好，梦熊 OJ！
+
+输出 \`Hello, MXOJ!\`。
+
+### 输入格式
+
+无。
+
+### 输出格式
+
+仅一行一个字符串 \`Hello, MXOJ!\`。
+
+### 样例
+
+\`\`\`input1
+
+\`\`\`
+
+\`\`\`output1
+Hello, MXOJ!
+\`\`\`
+
+### 数据范围
+
+无。
+
+"
+,
+  "difficulty": 1,
+  "id": "A1",
+  "link": "https://oier.team/problems/A1",
+  "memoryLimit": 536870912,
+  "samples": [
+    {
+      "input": "",
+      "output": "Hello, MXOJ!",
+    },
+  ],
+  "tags": [],
+  "timeLimit": 1000,
+  "title": "你好，梦熊 OJ！",
+  "type": "traditional",
+}
+`;

@@ -7,7 +7,7 @@ describe('MXOJ platform', () => {
   const mx = new MXOJ();
 
   it('should fetch problem', async () => {
-    assertProblem(await mx.getProblem(''));
+    assertProblem(await mx.getProblem('A1'));
   });
 
   it('should fetch interactive problem', async () => {
