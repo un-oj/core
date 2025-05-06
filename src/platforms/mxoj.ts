@@ -1,28 +1,27 @@
 /**
  * [MXOJ](https://oier.team) platform.
+ *
+ * It seems to be a fork of {@link Hydro}, so it reuses some of its logic.
  * @module
  */
 
-import type { Problem as BaseProblem, PlatformOptions, ProblemIOSample } from '../platform';
+import type { PlatformOptions } from '../platform';
+// eslint-disable-next-line unused-imports/no-unused-imports
+import type Hydro from './hydro';
+import type { Problem as HydroProblem, ProblemType as HydroProblemType } from './hydro';
 import { FetchError } from 'ofetch';
 import { NotFoundError, Platform, UnexpectedResponseError } from '../platform';
 import { UnOJError } from '../utils';
+import { parseHydroProblem } from './hydro';
 
-export type ProblemType = 'traditional' | 'interactive' | 'communication' | 'submission' | 'objective';
+export type ProblemType = HydroProblemType;
+export type Problem = HydroProblem;
 
-/**
- * MXOJ-specific problem type.
- *
- * - Samples are extracted from the problem description, but not removed from it
- * - Description is Markdown
- */
-export type Problem = BaseProblem<
-  string,
-  number,
-  number,
-  string[],
-  ProblemType
->;
+const ProblemTypeOverridingTags: Partial<Record<string, ProblemType>> = {
+  客观题: 'objective',
+  提交答案题: 'submission',
+  交互题: 'interactive',
+};
 
 /** MXOJ platform. */
 export default class MXOJ extends Platform {
@@ -37,7 +36,9 @@ export default class MXOJ extends Platform {
     const path = `/api/p/${id}`;
     let pdoc: any;
     try {
-      ({ pdoc } = await this.ofetch(path, { responseType: 'json' }));
+      // MXOJ API response structure is slightly different, pdoc is nested
+      const response = await this.ofetch(path, { responseType: 'json' });
+      pdoc = response.pdoc;
     } catch (e) {
       if (e instanceof FetchError && e.statusCode === 404)
         throw new NotFoundError('problem');
@@ -47,34 +48,15 @@ export default class MXOJ extends Platform {
     if (!pdoc)
       throw new UnexpectedResponseError(pdoc);
 
-    const content = JSON.parse(pdoc.content || '{}').zh || '';
-    const samples: ProblemIOSample[] = [];
-    const r = (i: number, s: string): RegExp => new RegExp(`\`\`\`${s}${i}\\n([\\s\\S]+?)\`\`\``);
-    for (let i = 1, match: any; match = r(i, 'input').exec(content); i++) {
-      samples.push({
-        input: match[1].trim(),
-        output: r(i, 'output').exec(content)?.[1].trim() || '',
-      });
+    const problem = parseHydroProblem(pdoc);
+    problem.link = new URL(`/problems/${id}`, this.baseURL).href;
+    for (const tag of problem.tags) {
+      if (tag in ProblemTypeOverridingTags) {
+        problem.type = ProblemTypeOverridingTags[tag]!;
+        break;
+      }
     }
 
-    return {
-      id: pdoc.pid,
-      type: pdoc.tag.includes('交互题')
-        ? 'interactive'
-        : pdoc.tag.includes('提交答案题')
-          ? 'submission'
-          : pdoc.tag.includes('客观题')
-            ? 'objective'
-            : 'traditional',
-      title: pdoc.title,
-      link: new URL(`/problems/${pdoc.pid}`, this.baseURL).toString(),
-
-      description: content,
-      samples,
-      timeLimit: pdoc.config?.timeMax,
-      memoryLimit: pdoc.config?.memoryMax * 1024 * 1024,
-      difficulty: pdoc.difficulty,
-      tags: pdoc.tag,
-    };
+    return problem;
   }
 }

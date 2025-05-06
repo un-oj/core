@@ -6,6 +6,7 @@
     ".": "./src/index.ts",
     "./platforms/atcoder": "./src/platforms/atcoder.ts",
     "./platforms/codeforces": "./src/platforms/codeforces.ts",
+    "./platforms/hydro": "./src/platforms/hydro.ts",
     "./platforms/leetcode": "./src/platforms/leetcode.ts",
     "./platforms/luogu": "./src/platforms/luogu.ts",
     "./platforms/mxoj": "./src/platforms/mxoj.ts"

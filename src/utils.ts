@@ -1,5 +1,10 @@
 export { version } from '../package.json' with { type: 'json' };
 
+/** Get the first key of an object. */
+export function getFirstKey<T extends Record<never, never>>(obj: T): keyof T {
+  return Object.keys(obj)[0] as keyof T;
+}
+
 /**
  * Parses a human-readable time string.
  * @param s The string to parse.

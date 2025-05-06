@@ -68,7 +68,7 @@ export default class Codeforces extends Platform {
         ? 'interactive'
         : 'traditional',
       title: body.find('.header .title').text().replace(`${num}. `, ''),
-      link: new URL(path, this.baseURL).toString(),
+      link: new URL(path, this.baseURL).href,
       description,
 
       samples: examples,

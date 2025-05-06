@@ -9,7 +9,7 @@ describe('AtCoder platform', () => {
     expect(await at.getProblem('abc403_a')).toMatchSnapshot();
   });
 
-  it('should fetch problem abc403_a with ja locale', async () => {
+  it('should fetch problem abc403_a w/ i18n', async () => {
     const at = new AtCoder({ locale: 'ja' });
     expect(await at.getProblem('abc403_a')).toMatchSnapshot();
   });

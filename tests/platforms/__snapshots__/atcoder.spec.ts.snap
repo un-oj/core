@@ -34,7 +34,7 @@ exports[`AtCoder platform should fetch problem abc403_a 1`] = `
 }
 `;
 
-exports[`AtCoder platform should fetch problem abc403_a with ja locale 1`] = `
+exports[`AtCoder platform should fetch problem abc403_a w/ i18n 1`] = `
 {
   "description": 
 "<p>配点 : <var>100</var> 点</p>

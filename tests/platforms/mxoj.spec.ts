@@ -9,15 +9,15 @@ describe('MXOJ platform', () => {
     expect(await mx.getProblem('A1')).toMatchSnapshot();
   });
 
-  it('should fetch submission problem B1', async () => {
-    const p = await mx.getProblem('B1');
-    expect(p.type).toBe('submission');
-    expect(p).toMatchSnapshot();
-  });
-
   it('should fetch interactive problem B3', async () => {
     const p = await mx.getProblem('B3');
     expect(p.type).toBe('interactive');
+    expect(p).toMatchSnapshot();
+  });
+
+  it('should fetch submission problem B1', async () => {
+    const p = await mx.getProblem('B1');
+    expect(p.type).toBe('submission');
     expect(p).toMatchSnapshot();
   });
 

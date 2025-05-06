@@ -9,7 +9,7 @@
   <a href="https://github.com/un-oj/core"><img src="https://img.shields.io/github/stars/un-oj/core"></a>
 </p>
 
-Unified Online Judge information collector.
+Unified Online Judge information collector, tree-shakable and extensible.
 
 ## Usage
 
@@ -29,6 +29,7 @@ Currently supported platforms:
 
 - [AtCoder](https://jsr.io/@un-oj/core/doc/platforms/atcoder) (`/platforms/atcoder`)
 - [Codeforces](https://jsr.io/@un-oj/core/doc/platforms/codeforces) (`/platforms/codeforces`)
+- [Hydro](https://jsr.io/@un-oj/core/doc/platforms/hydro) (`/platforms/hydro`)
 - [LeetCode](https://jsr.io/@un-oj/core/doc/platforms/leetcode) (`/platforms/leetcode`)
 - [Luogu](https://jsr.io/@un-oj/core/doc/platforms/luogu) (`/platforms/luogu`)
 - [MXOJ](https://jsr.io/@un-oj/core/doc/platforms/mxoj) (`/platforms/mxoj`)

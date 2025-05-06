@@ -44,7 +44,7 @@ export default class AtCoder extends Platform<Locale> {
   override async getProblem(id: string): Promise<Problem> {
     const contest = id.split('_')[0];
     const path = `/contests/${contest}/tasks/${id}`;
-    const url = new URL(path, this.baseURL).toString();
+    const url = new URL(path, this.baseURL).href;
 
     let $: CheerioAPI;
     try {

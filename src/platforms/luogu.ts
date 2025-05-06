@@ -92,7 +92,7 @@ export default class Luogu extends Platform<string> {
             ? 'communication'
             : 'traditional',
       title: content.name,
-      link: new URL(path, this.baseURL).toString(),
+      link: new URL(path, this.baseURL).href,
 
       description: {
         background: content.background,

@@ -14,7 +14,8 @@ export type Difficulty = 'Easy' | 'Medium' | 'Hard';
 /**
  * LeetCode-specific problem type.
  *
- * Description is HTML.
+ * - Description is HTML
+ * - ID is the title slug, e.g. `two-sum`
  */
 export type Problem = BaseProblem<
   string,
@@ -52,7 +53,7 @@ export default class LeetCode extends Platform {
     super(options, baseURL);
   }
 
-  /** Fetches a problem from LeetCode using GraphQL API. */
+  /** Fetches a problem from LeetCode using internal API. */
   override async getProblem(slug: string): Promise<Problem> {
     let data: any;
     try {
@@ -86,6 +87,7 @@ export default class LeetCode extends Platform {
       const contents = $(el).parent().next().contents();
       if (contents.length < 4)
         throw new UnexpectedResponseError();
+
       const sample: ProblemIOSample = {
         input: contents.eq(1).text().trim(),
         output: contents.eq(3).text()!.trim(),
@@ -99,7 +101,7 @@ export default class LeetCode extends Platform {
       id: slug,
       type: 'traditional',
       title,
-      link: new URL(`/problems/${slug}/`, this.baseURL).toString(),
+      link: new URL(`/problems/${slug}/`, this.baseURL).href,
       description: content,
       samples,
 
