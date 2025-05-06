@@ -1,6 +1,6 @@
 // Bun Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`AtCoder platform should fetch problem abc403_a 1`] = `
+exports[`AtCoder platform should fetch problem 1`] = `
 {
   "description": 
 "<p>Score : <var>100</var> points</p>
@@ -34,7 +34,7 @@ exports[`AtCoder platform should fetch problem abc403_a 1`] = `
 }
 `;
 
-exports[`AtCoder platform should fetch problem abc403_a w/ i18n 1`] = `
+exports[`AtCoder platform should fetch problem w/ i18n 1`] = `
 {
   "description": 
 "<p>配点 : <var>100</var> 点</p>
@@ -68,7 +68,7 @@ exports[`AtCoder platform should fetch problem abc403_a w/ i18n 1`] = `
 }
 `;
 
-exports[`AtCoder platform shoud fetch interactive problem arc070_d 1`] = `
+exports[`AtCoder platform shoud fetch interactive problem 1`] = `
 {
   "description": 
 "<p>Score : <var>1300</var> points</p>

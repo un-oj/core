@@ -1,6 +1,6 @@
 // Bun Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Hydro platform should fetch problem H1000 1`] = `
+exports[`Hydro platform should fetch problem 1`] = `
 {
   "description": 
 "## 题目描述
@@ -60,7 +60,7 @@ exports[`Hydro platform should fetch problem H1000 1`] = `
 }
 `;
 
-exports[`Hydro platform should fetch interactive problem H1026 1`] = `
+exports[`Hydro platform should fetch interactive problem 1`] = `
 {
   "description": 
 "## 题目背景
@@ -144,7 +144,7 @@ Dream 的音乐盘重要度为 $[[2222,22222,222222],[22,222,2222222]]$。
 }
 `;
 
-exports[`Hydro platform should fetch submission problem H1022 1`] = `
+exports[`Hydro platform should fetch submission problem 1`] = `
 {
   "description": 
 "## 题目背景

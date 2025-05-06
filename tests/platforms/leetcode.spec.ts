@@ -1,20 +1,21 @@
 import { NotFoundError } from '@un-oj/core';
 import LeetCode from '@un-oj/core/platforms/leetcode';
 import { describe, expect, it } from 'bun:test';
+import { assertProblem } from './utils';
 
 describe('LeetCode platform', () => {
   const lc = new LeetCode();
   const lcCN = new LeetCode({ baseURL: 'https://leetcode.cn' });
 
-  it('should fetch problem "two-sum"', async () => {
-    expect(await lc.getProblem('two-sum')).toMatchSnapshot();
+  it('should fetch problem', async () => {
+    assertProblem(await lc.getProblem('two-sum'));
   });
 
-  it('should fetch problem "two-sum" from LeetCode CN', async () => {
-    expect(await lcCN.getProblem('two-sum')).toMatchSnapshot();
+  it('should fetch problem w/ LeetCode CN', async () => {
+    assertProblem(await lcCN.getProblem('two-sum'));
   });
 
-  it('should throw NotFoundError for non-existent problem "this-problem-does-not-exist"', async () => {
+  it('should throw NotFoundError w/ non-existent problem', async () => {
     expect(lc.getProblem('this-problem-does-not-exist')).rejects.toThrow(NotFoundError);
   });
 });

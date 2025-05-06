@@ -1,6 +1,6 @@
 // Bun Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Luogu platform should fetch problem B2001 1`] = `
+exports[`Luogu platform should fetch problem 1`] = `
 {
   "description": {
     "background": "强烈推荐[新用户必读贴](/discuss/show/241461)",
@@ -55,7 +55,7 @@ exports[`Luogu platform should fetch problem B2001 1`] = `
 }
 `;
 
-exports[`Luogu platform should fetch problem P2573 1`] = `
+exports[`Luogu platform should fetch problem 2`] = `
 {
   "description": {
     "background": "",

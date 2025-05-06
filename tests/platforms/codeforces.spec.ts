@@ -2,35 +2,34 @@ import { NotFoundError } from '@un-oj/core';
 import Codeforces from '@un-oj/core/platforms/codeforces';
 import { UnOJError } from '@un-oj/core/utils';
 import { describe, expect, it } from 'bun:test';
+import { assertProblem } from './utils';
 
 const TIMEOUT = 10 * 1000;
 
 describe('Codeforces platform', () => {
   const cf = new Codeforces();
 
-  it('should fetch problem 1A', async () => {
-    expect(await cf.getProblem('1A')).toMatchSnapshot();
+  it('should fetch old problem', async () => {
+    assertProblem(await cf.getProblem('1A'));
   }, TIMEOUT);
 
-  it('should fetch problem 2050E', async () => {
-    expect(await cf.getProblem('2050E')).toMatchSnapshot();
+  it('should fetch new problem', async () => {
+    assertProblem(await cf.getProblem('2050E'));
   }, TIMEOUT);
 
-  it('should fetch interactive problem 1486C2', async () => {
-    const p = await cf.getProblem('1486C2');
-    expect(p.type).toBe('interactive');
-    expect(p).toMatchSnapshot();
+  it('should fetch interactive problem', async () => {
+    assertProblem(await cf.getProblem('1486C2'), { type: 'interactive' });
   }, TIMEOUT);
 
-  it('should fetch gym problem 105863A', async () => {
-    expect(await cf.getProblem('105863A')).toMatchSnapshot();
+  it('should fetch gym problem', async () => {
+    assertProblem(await cf.getProblem('105863A'));
   }, TIMEOUT);
 
-  it.todo('should throw for not-ready problem 105851A', async () => {
+  it.todo('should throw w/ not-ready problem', async () => {
     expect(cf.getProblem('105851A')).rejects.toThrow(new UnOJError('Statement not ready'));
   }, TIMEOUT);
 
-  it('should throw NotFoundError for non-existent problem 114514A', async () => {
+  it('should throw NotFoundError w/ non-existent problem', async () => {
     expect(cf.getProblem('114514A')).rejects.toThrow(NotFoundError);
   }, TIMEOUT);
 });
