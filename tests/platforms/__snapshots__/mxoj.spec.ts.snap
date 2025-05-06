@@ -1,6 +1,6 @@
 // Bun Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`MXOJ platform should fetch problem  1`] = `
+exports[`MXOJ platform should fetch problem 1`] = `
 {
   "description": 
 "### 题目描述
@@ -34,8 +34,8 @@ Hello, MXOJ!
 "
 ,
   "difficulty": 1,
-  "id": "",
-  "link": "https://oier.team/problems/",
+  "id": "A1",
+  "link": "https://oier.team/problems/A1",
   "memoryLimit": 536870912,
   "samples": [
     {
@@ -47,72 +47,6 @@ Hello, MXOJ!
   "timeLimit": 1000,
   "title": "你好，梦熊 OJ！",
   "type": "traditional",
-}
-`;
-
-exports[`MXOJ platform should fetch submission problem 1`] = `
-{
-  "description": 
-"### 题目背景
-
-本题为“提交答案（单文件）”类型题目的测试用题。
-
-### 题目描述
-
-**这是一道提交答案题。**
-
-将 $1, 2, \\ldots, 9$ 共 $9$ 个数分成三组，分别组成三个三位数，且使这三个三位数构成 $1 : 2 : 3$ 的比例，试求出所有满足条件的三个三位数。
-
-例如：三个三位数 $192$、$384$、$576$ 满足以上条件。
-
-### 输入格式
-
-无。
-
-### 输出格式
-
-若干行，每行三个整数，表示构成 $1 : 2 : 3$ 的比例的三个三位数。
-
-若有多组解，按照第一个数从小到大的顺序排列。
-
-### 样例
-
-\`\`\`input1
-
-\`\`\`
-
-\`\`\`output1
-192 384 576
-...
-\`\`\`
-
-#### 样例解释
-
-样例输出仅作展示用途，并不是正确答案。请自行补充其他行。
-
-### 数据范围
-
-无。"
-,
-  "difficulty": 0,
-  "id": "B1",
-  "link": "https://oier.team/problems/B1",
-  "memoryLimit": 268435456,
-  "samples": [
-    {
-      "input": "",
-      "output": 
-"192 384 576
-..."
-,
-    },
-  ],
-  "tags": [
-    "提交答案题",
-  ],
-  "timeLimit": 1000,
-  "title": "三连击",
-  "type": "submission",
 }
 `;
 
@@ -239,6 +173,72 @@ g++ grader.cpp guess.cpp -o guess -O2 -std=c++14 -static
 }
 `;
 
+exports[`MXOJ platform should fetch submission problem 1`] = `
+{
+  "description": 
+"### 题目背景
+
+本题为“提交答案（单文件）”类型题目的测试用题。
+
+### 题目描述
+
+**这是一道提交答案题。**
+
+将 $1, 2, \\ldots, 9$ 共 $9$ 个数分成三组，分别组成三个三位数，且使这三个三位数构成 $1 : 2 : 3$ 的比例，试求出所有满足条件的三个三位数。
+
+例如：三个三位数 $192$、$384$、$576$ 满足以上条件。
+
+### 输入格式
+
+无。
+
+### 输出格式
+
+若干行，每行三个整数，表示构成 $1 : 2 : 3$ 的比例的三个三位数。
+
+若有多组解，按照第一个数从小到大的顺序排列。
+
+### 样例
+
+\`\`\`input1
+
+\`\`\`
+
+\`\`\`output1
+192 384 576
+...
+\`\`\`
+
+#### 样例解释
+
+样例输出仅作展示用途，并不是正确答案。请自行补充其他行。
+
+### 数据范围
+
+无。"
+,
+  "difficulty": 0,
+  "id": "B1",
+  "link": "https://oier.team/problems/B1",
+  "memoryLimit": 268435456,
+  "samples": [
+    {
+      "input": "",
+      "output": 
+"192 384 576
+..."
+,
+    },
+  ],
+  "tags": [
+    "提交答案题",
+  ],
+  "timeLimit": 1000,
+  "title": "三连击",
+  "type": "submission",
+}
+`;
+
 exports[`MXOJ platform should fetch objective problem 1`] = `
 {
   "description": 
@@ -269,55 +269,5 @@ exports[`MXOJ platform should fetch objective problem 1`] = `
   "timeLimit": 1000,
   "title": "谁不是梦熊管理组成员？",
   "type": "objective",
-}
-`;
-
-exports[`MXOJ platform should fetch problem 1`] = `
-{
-  "description": 
-"### 题目描述
-
-你好，梦熊 OJ！
-
-输出 \`Hello, MXOJ!\`。
-
-### 输入格式
-
-无。
-
-### 输出格式
-
-仅一行一个字符串 \`Hello, MXOJ!\`。
-
-### 样例
-
-\`\`\`input1
-
-\`\`\`
-
-\`\`\`output1
-Hello, MXOJ!
-\`\`\`
-
-### 数据范围
-
-无。
-
-"
-,
-  "difficulty": 1,
-  "id": "A1",
-  "link": "https://oier.team/problems/A1",
-  "memoryLimit": 536870912,
-  "samples": [
-    {
-      "input": "",
-      "output": "Hello, MXOJ!",
-    },
-  ],
-  "tags": [],
-  "timeLimit": 1000,
-  "title": "你好，梦熊 OJ！",
-  "type": "traditional",
 }
 `;
