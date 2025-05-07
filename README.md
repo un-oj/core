@@ -9,7 +9,7 @@
   <a href="https://github.com/un-oj/core"><img src="https://img.shields.io/github/stars/un-oj/core"></a>
 </p>
 
-Unified Online Judge information collector, tree-shakable and extensible.
+Unified information collector of online competitive programming platforms.
 
 ## Usage
 

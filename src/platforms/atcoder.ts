@@ -4,8 +4,8 @@
  */
 
 import type { CheerioAPI } from 'cheerio';
-import type { PlatformOptions, ProblemIOSample } from '../platform';
-import type { Problem as BaseProblem } from '../problem';
+import type { PlatformOptions } from '../platform';
+import type { Problem as BaseProblem, ProblemIOSample } from '../problem';
 import { load } from 'cheerio';
 import { FetchError } from 'ofetch';
 import { NotFoundError, Platform } from '../platform';
