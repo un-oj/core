@@ -8,4 +8,6 @@
  * ```
  */
 
+export * from './contest';
 export * from './platform';
+export * from './problem';

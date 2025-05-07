@@ -3,8 +3,9 @@
  * @module
  */
 
-import type { PlatformOptions, ProblemDescriptionObject } from '../platform';
-import type { Problem as BaseProblem } from '../problem';
+import type { Contest as BaseContest } from '../contest';
+import type { PlatformOptions } from '../platform';
+import type { Problem as BaseProblem, ProblemDescriptionObject } from '../problem';
 import { FetchError } from 'ofetch';
 import { NotFoundError, Platform } from '../platform';
 import { addHeaders, UnOJError } from '../utils';
@@ -37,6 +38,29 @@ export type Problem = BaseProblem<
   ProblemType
 >;
 
+export type ProblemIdPrefix = 'B' | 'P' | 'T' | 'U';
+export type ContestFormat = 1 | 2 | 3 | 4 | 5;
+export const ContestFormatLabel: Record<ContestFormat, string> = {
+  1: 'IOI',
+  2: 'OI',
+  3: 'ICPC',
+  4: '乐多',
+  5: 'Codeforces',
+};
+
+export interface ContestProblem {
+  score: number
+  problem: {
+    pid: string
+    title: string
+    difficulty: Difficulty
+    fullScore: number
+    type: ProblemIdPrefix
+  }
+}
+
+export type Contest = BaseContest<ContestProblem, ContestFormat>;
+
 export const DEFAULT_BASE_URL = 'https://www.luogu.com.cn';
 
 /**
@@ -52,7 +76,7 @@ export default class Luogu extends Platform<string> {
         ...options?.ofetchDefaults,
         headers: addHeaders(
           options?.ofetchDefaults?.headers,
-          [['x-lentille-request', 'content-only']],
+          [['x-lentille-request', 'content-only'], ['x-luogu-type', 'content-only']],
         ),
       },
     }, DEFAULT_BASE_URL);
@@ -112,6 +136,33 @@ export default class Luogu extends Platform<string> {
       memoryLimit: (data.problem.limits.memory as number[]).map(v => v * 1024),
       difficulty: data.problem.difficulty as Difficulty,
       tags,
+    };
+  }
+
+  override async getContest(id: string): Promise<Contest> {
+    const path = `/contest/${id}`;
+    let contest: any, contestProblems: ContestProblem[] | null;
+    try {
+      const data = await this.ofetch(path, { responseType: 'json' });
+      if (data.code !== 200)
+        throw new NotFoundError('contest');
+      ({ contest, contestProblems } = data.currentData);
+    } catch (e) {
+      if (e instanceof UnOJError)
+        throw e;
+      if (e instanceof FetchError && e.statusCode === 404)
+        throw new NotFoundError('contest');
+      throw new UnOJError(`Failed to fetch contest ${id}`, { cause: e });
+    }
+
+    return {
+      id,
+      title: contest.name,
+      description: contest.description,
+      startTime: contest.startTime && new Date(contest.startTime * 1000),
+      endTime: contest.endTime && new Date(contest.endTime * 1000),
+      problems: contestProblems ?? [],
+      format: contest.ruleType,
     };
   }
 }

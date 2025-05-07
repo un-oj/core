@@ -1,7 +1,7 @@
 /** General contest information. */
 export interface Contest<
-  Problem = never,
-  Format extends string | undefined = string | undefined,
+  Problem = unknown,
+  Format extends string | number | undefined = string | number | undefined,
 > {
   id: string
   title: string
