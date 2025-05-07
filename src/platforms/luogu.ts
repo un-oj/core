@@ -3,7 +3,8 @@
  * @module
  */
 
-import type { Problem as BaseProblem, PlatformOptions, ProblemDescriptionObject } from '../platform';
+import type { PlatformOptions, ProblemDescriptionObject } from '../platform';
+import type { Problem as BaseProblem } from '../problem';
 import { FetchError } from 'ofetch';
 import { NotFoundError, Platform } from '../platform';
 import { addHeaders, UnOJError } from '../utils';

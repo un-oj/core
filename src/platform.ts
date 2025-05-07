@@ -1,51 +1,15 @@
 import type { $Fetch, CreateFetchOptions, FetchOptions } from 'ofetch';
+import type { Contest } from './contest';
+import type { Problem } from './problem';
 import { ofetch } from 'ofetch';
 import { addHeaders, UnOJError, version } from './utils';
 
-/** A sample input/output pair for a {@link Problem}. */
-export interface ProblemIOSample {
-  input: string
-  output: string
-  hint?: string
-}
-
-/** Well-classified {@link Problem} information. */
-export interface ProblemDescriptionObject {
-  background: string
-  details: string
-  input: string
-  output: string
-  hint: string
-}
-
-/** General problem information. */
-export interface Problem<
-  Desc extends string | ProblemDescriptionObject = string | ProblemDescriptionObject,
-  Limits extends number | number[] | undefined = number | number[] | undefined,
-  Difficulty extends string | number | undefined = string | number | undefined,
-  Tags extends string[] | number[] | undefined = string[] | number[] | undefined,
-  Type extends string = string,
-> {
-  id: string
-  type: Type
-  title: string
-  /** The problem description without the samples (unless otherwise specified). */
-  description: Desc
-  link: string
-  samples: ProblemIOSample[]
-  /** The time limit in milliseconds. */
-  timeLimit: Limits
-  /** The memory limit in bytes. */
-  memoryLimit: Limits
-  tags: Tags
-  difficulty: Difficulty
-}
-
+/** General platform constructor options. */
 export interface PlatformOptions<Locale extends string | never = never> {
   /**
-   * {@link ofetch} instance to use.
+   * [`ofetch`](https://npmjs.com/package/ofetch) instance to use.
    *
-   * Overrides {@link ofetchDefaults} {@link ofetchCreateOptions} {@link baseURL}
+   * Overrides {@link ofetchDefaults} {@link ofetchCreateOptions} {@link baseURL}.
    */
   ofetch?: $Fetch
   ofetchDefaults?: FetchOptions
@@ -91,6 +55,15 @@ export abstract class Platform<Locale extends string | never = never> {
    * @returns The problem object.
    */
   getProblem(_id: string): Promise<Problem> {
+    return Promise.reject(new UnsupportedError());
+  }
+
+  /**
+   * Fetch a contest from the platform.
+   * @param _id The contest ID.
+   * @returns The contest object.
+   */
+  getContest(_id: string): Promise<Contest> {
     return Promise.reject(new UnsupportedError());
   }
 }

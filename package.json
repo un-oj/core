@@ -43,7 +43,7 @@
     "dev": "bun ./scripts/dev.ts",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
-    "test": "bun test"
+    "test": "bun test --coverage"
   },
   "dependencies": {
     "cheerio": "^1.0.0",
