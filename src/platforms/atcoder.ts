@@ -26,16 +26,16 @@ export type Problem = BaseProblem<
   undefined
 >;
 
+export const DEFAULT_BASE_URL = 'https://atcoder.jp';
+
 /**
  * AtCoder platform.
  *
  * I18n is supported.
  */
 export default class AtCoder extends Platform<Locale> {
-  static readonly DEFAULT_BASE_URL = 'https://atcoder.jp';
-
   constructor(options?: PlatformOptions<Locale>) {
-    super(options, AtCoder.DEFAULT_BASE_URL, 'en');
+    super(options, DEFAULT_BASE_URL, 'en');
   }
 
   /**

@@ -23,12 +23,12 @@ export type Problem = BaseProblem<
   ProblemType
 >;
 
+export const DEFAULT_BASE_URL = 'https://codeforces.com';
+
 /** Codeforces platform. */
 export default class Codeforces extends Platform {
-  static readonly DEFAULT_BASE_URL = 'https://codeforces.com';
-
   constructor(options?: PlatformOptions) {
-    super(options, Codeforces.DEFAULT_BASE_URL);
+    super(options, DEFAULT_BASE_URL);
   }
 
   /**

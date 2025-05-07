@@ -40,17 +40,16 @@ query ($slug: String!) {
   }
 }`;
 
+export const DEFAULT_BASE_URL = 'https://leetcode.com';
+
 /**
  * LeetCode platform.
  *
  * If you want to use LeetCode CN, set `baseURL` to `https://leetcode.cn`.
  */
 export default class LeetCode extends Platform {
-  static readonly DEFAULT_BASE_URL = 'https://leetcode.com';
-
   constructor(options?: PlatformOptions) {
-    const baseURL = options?.baseURL ?? LeetCode.DEFAULT_BASE_URL;
-    super(options, baseURL);
+    super(options, DEFAULT_BASE_URL);
   }
 
   /** Fetches a problem from LeetCode using internal API. */

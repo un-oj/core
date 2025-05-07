@@ -64,10 +64,10 @@ export function parseHydroProblem(pdoc: any, lang?: string): Problem {
   };
 }
 
+export const DEFAULT_BASE_URL = 'https://hydro.ac';
+
 /** HydroOJ platform. */
 export default class Hydro extends Platform<string> {
-  static readonly DEFAULT_BASE_URL = 'https://hydro.ac';
-
   constructor(options?: PlatformOptions<string>) {
     super({
       ...options,
@@ -78,7 +78,7 @@ export default class Hydro extends Platform<string> {
           [['accept', 'application/json']],
         ),
       },
-    }, Hydro.DEFAULT_BASE_URL);
+    }, DEFAULT_BASE_URL);
   }
 
   /**

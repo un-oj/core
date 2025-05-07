@@ -36,14 +36,14 @@ export type Problem = BaseProblem<
   ProblemType
 >;
 
+export const DEFAULT_BASE_URL = 'https://www.luogu.com.cn';
+
 /**
  * Luogu platform.
  *
  * I18n is supported.
  */
 export default class Luogu extends Platform<string> {
-  static readonly DEFAULT_BASE_URL = 'https://www.luogu.com.cn';
-
   constructor(options?: PlatformOptions<string>) {
     super({
       ...options,
@@ -54,7 +54,7 @@ export default class Luogu extends Platform<string> {
           [['x-lentille-request', 'content-only']],
         ),
       },
-    }, Luogu.DEFAULT_BASE_URL);
+    }, DEFAULT_BASE_URL);
   }
 
   /** Fetches a problem from Luogu using internal API. */
