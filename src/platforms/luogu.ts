@@ -5,7 +5,7 @@
 
 import type { Contest as BaseContest } from '../contest';
 import type { PlatformOptions } from '../platform';
-import type { Problem as BaseProblem, ProblemDescriptionObject } from '../problem';
+import type { Problem as BaseProblem, ProblemDescriptionObject, TagInfo } from '../problem';
 import { FetchError } from 'ofetch';
 import { NotFoundError, Platform } from '../platform';
 import { addHeaders, UnOJError } from '../utils';
@@ -34,7 +34,7 @@ export type Problem = BaseProblem<
   ProblemDescriptionObject,
   number[],
   Difficulty,
-  number[],
+  TagInfo[],
   ProblemType
 >;
 
@@ -120,11 +120,11 @@ export default class Luogu extends Platform<string> {
       link: new URL(path, this.baseURL).href,
 
       description: {
-        background: content.background,
-        details: content.description,
-        input: content.formatI,
-        output: content.formatO,
-        hint: content.hint,
+        background: content.background || '',
+        details: content.description || '',
+        input: content.formatI || '',
+        output: content.formatO || '',
+        hint: content.hint || '',
       },
 
       samples: (data.problem.samples as Array<[string, string]>).map(([a, b]) => ({
@@ -135,7 +135,7 @@ export default class Luogu extends Platform<string> {
       timeLimit: data.problem.limits.time,
       memoryLimit: (data.problem.limits.memory as number[]).map(v => v * 1024),
       difficulty: data.problem.difficulty as Difficulty,
-      tags,
+      tags: tags.map(t => ({ id: t })),
     };
   }
 

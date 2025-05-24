@@ -17,7 +17,7 @@ export interface ProblemDescriptionObject {
 /** A tag for a {@link Problem}. */
 export interface TagInfo<Id extends string | number = string | number> {
   id: Id
-  name: string
+  name?: string
 }
 
 /** General problem information. */
@@ -25,7 +25,7 @@ export interface Problem<
   Desc extends string | ProblemDescriptionObject = string | ProblemDescriptionObject,
   Limits extends number | number[] | undefined = number | number[] | undefined,
   Difficulty extends string | number | undefined = string | number | undefined,
-  Tags extends TagInfo[] = TagInfo[],
+  Tags extends string[] | TagInfo[] | undefined = string[] | TagInfo[] | undefined,
   Type extends string = string,
 > {
   id: string
