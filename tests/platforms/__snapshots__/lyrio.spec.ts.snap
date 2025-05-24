@@ -1,0 +1,65 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Lyrio platform (problem) should work 1`] = `
+{
+  "description": "[{"sectionTitle":"题目描述","type":"Text","text":"输入 $ a $ 和 $ b $，输出 $ a + b $ 的结果。"},{"sectionTitle":"输入格式","type":"Text","text":"一行两个正整数 $ a $ 和 $ b $。"},{"sectionTitle":"输出格式","type":"Text","text":"一行一个正整数 $ a + b $。"},{"sectionTitle":"样例","type":"Sample","sampleId":0,"text":"根据数学知识有 $ 1 + 2 = 3 $。"},{"sectionTitle":"数据范围","type":"Text","text":"对于 $ 100\\\\% $ 的数据，$ 1 \\\\leq a, b \\\\leq 10 ^ 6 $。"}]",
+  "difficulty": undefined,
+  "id": "1",
+  "link": "https://loj.ac/p/1",
+  "memoryLimit": 536870912,
+  "samples": [
+    {
+      "input": "1 2",
+      "output": "3",
+    },
+  ],
+  "tags": [
+    {
+      "color": "black",
+      "id": 1,
+      "name": "系统测试",
+      "nameLocale": "zh_CN",
+    },
+  ],
+  "timeLimit": 2000,
+  "title": "A + B 问题",
+  "type": "Traditional",
+}
+`;
+
+exports[`Lyrio platform (problem) should work 2`] = `
+{
+  "description": "[{"sectionTitle":"题目描述","type":"Text","text":"输出 \`Hello, World!\`，大小写不限。"},{"sectionTitle":"样例 1","type":"Sample","sampleId":0,"text":""},{"sectionTitle":"样例 2","type":"Sample","sampleId":1,"text":""}]",
+  "difficulty": undefined,
+  "id": "2",
+  "link": "https://loj.ac/p/2",
+  "memoryLimit": 268435456,
+  "samples": [
+    {
+      "input": "",
+      "output": "Hello, World!",
+    },
+    {
+      "input": "",
+      "output": "hello, WORLD!",
+    },
+  ],
+  "tags": [
+    {
+      "color": "black",
+      "id": 1,
+      "name": "系统测试",
+      "nameLocale": "zh_CN",
+    },
+    {
+      "color": "violet",
+      "id": 4,
+      "name": "Special Judge",
+      "nameLocale": "zh_CN",
+    },
+  ],
+  "timeLimit": 1000,
+  "title": "你好，世界！",
+  "type": "Traditional",
+}
+`;

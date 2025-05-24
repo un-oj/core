@@ -31,6 +31,7 @@ Currently supported platforms:
 - [Codeforces](https://jsr.io/@un-oj/core/doc/platforms/codeforces) (`/platforms/codeforces`)
 - [Hydro](https://jsr.io/@un-oj/core/doc/platforms/hydro) (`/platforms/hydro`)
 - [LeetCode](https://jsr.io/@un-oj/core/doc/platforms/leetcode) (`/platforms/leetcode`)
+- [Lyrio](https://jsr.io/@un-oj/core/doc/platforms/lyrio) (LibreOJ) (`/platforms/lyrio`)
 - [Luogu](https://jsr.io/@un-oj/core/doc/platforms/luogu) (`/platforms/luogu`)
 - [MXOJ](https://jsr.io/@un-oj/core/doc/platforms/mxoj) (`/platforms/mxoj`)
 

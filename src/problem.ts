@@ -14,12 +14,18 @@ export interface ProblemDescriptionObject {
   hint: string
 }
 
+/** A tag for a {@link Problem}. */
+export interface TagInfo<Id extends string | number = string | number> {
+  id: Id
+  name: string
+}
+
 /** General problem information. */
 export interface Problem<
   Desc extends string | ProblemDescriptionObject = string | ProblemDescriptionObject,
   Limits extends number | number[] | undefined = number | number[] | undefined,
   Difficulty extends string | number | undefined = string | number | undefined,
-  Tags extends string[] | number[] | undefined = string[] | number[] | undefined,
+  Tags extends TagInfo[] = TagInfo[],
   Type extends string = string,
 > {
   id: string
