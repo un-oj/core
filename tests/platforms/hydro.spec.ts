@@ -1,7 +1,7 @@
 import { NotFoundError } from '@un-oj/core';
 import Hydro from '@un-oj/core/platforms/hydro';
 import { describe, expect, it } from 'bun:test';
-import { assertProblem } from './utils';
+import { assertProblem } from './utils.ts';
 
 const TIMEOUT = 10 * 1000;
 

@@ -39,7 +39,7 @@
   ],
   "scripts": {
     "prepare": "husky",
-    "build": "unbuild",
+    "build": "obuild",
     "dev": "bun ./scripts/dev.ts",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
@@ -58,7 +58,7 @@
     "@types/bun": "^1.2.10",
     "eslint": "^9.24.0",
     "husky": "^9.1.7",
-    "typescript": "^5.8.3",
-    "unbuild": "^3.5.0"
+    "obuild": "^0.2.1",
+    "typescript": "^5.8.3"
   }
 }

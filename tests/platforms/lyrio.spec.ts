@@ -1,7 +1,7 @@
 import { NotFoundError } from '@un-oj/core';
 import Lyrio from '@un-oj/core/platforms/lyrio';
 import { describe, expect, it } from 'bun:test';
-import { assertProblem } from './utils';
+import { assertProblem } from './utils.ts';
 
 describe('Lyrio platform (problem)', () => {
   const loj = new Lyrio();

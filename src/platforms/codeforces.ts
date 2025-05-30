@@ -3,11 +3,11 @@
  * @module
  */
 
-import type { PlatformOptions } from '../platform';
-import type { Problem as BaseProblem, ProblemIOSample } from '../problem';
+import type { PlatformOptions } from '../platform.ts';
+import type { Problem as BaseProblem, ProblemIOSample } from '../problem.ts';
 import { load } from 'cheerio';
-import { NotFoundError, Platform } from '../platform';
-import { parseMemory, parseTime } from '../utils';
+import { NotFoundError, Platform } from '../platform.ts';
+import { parseMemory, parseTime } from '../utils.ts';
 
 export type ProblemType = 'traditional' | 'interactive' | 'communication' | 'submission';
 

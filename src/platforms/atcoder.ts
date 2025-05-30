@@ -4,12 +4,12 @@
  */
 
 import type { CheerioAPI } from 'cheerio';
-import type { PlatformOptions } from '../platform';
-import type { Problem as BaseProblem, ProblemIOSample } from '../problem';
+import type { PlatformOptions } from '../platform.ts';
+import type { Problem as BaseProblem, ProblemIOSample } from '../problem.ts';
 import { load } from 'cheerio';
 import { FetchError } from 'ofetch';
-import { NotFoundError, Platform } from '../platform';
-import { parseMemory, parseTime, UnOJError } from '../utils';
+import { NotFoundError, Platform } from '../platform.ts';
+import { parseMemory, parseTime, UnOJError } from '../utils.ts';
 
 export type ProblemType = 'traditional' | 'interactive';
 export type Locale = 'en' | 'ja';

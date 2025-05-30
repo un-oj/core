@@ -1,7 +1,7 @@
 import { NotFoundError } from '@un-oj/core';
 import AtCoder from '@un-oj/core/platforms/atcoder';
 import { describe, expect, it } from 'bun:test';
-import { assertProblem } from './utils';
+import { assertProblem } from './utils.ts';
 
 describe('AtCoder platform', () => {
   const at = new AtCoder();

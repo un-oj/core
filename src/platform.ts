@@ -1,8 +1,8 @@
 import type { $Fetch, CreateFetchOptions, FetchOptions } from 'ofetch';
-import type { Contest } from './contest';
-import type { Problem } from './problem';
+import type { Contest } from './contest.ts';
+import type { Problem } from './problem.ts';
 import { ofetch } from 'ofetch';
-import { addHeaders, UnOJError, version } from './utils';
+import { addHeaders, UnOJError, version } from './utils.ts';
 
 /** General platform constructor options. */
 export interface PlatformOptions<Locale extends string | never = never> {

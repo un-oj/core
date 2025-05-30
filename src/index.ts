@@ -14,8 +14,8 @@
  */
 
 // eslint-disable-next-line unused-imports/no-unused-imports
-import type { Platform } from './platform';
+import type { Platform } from './platform.ts';
 
-export * from './contest';
-export * from './platform';
-export * from './problem';
+export * from './contest.ts';
+export * from './platform.ts';
+export * from './problem.ts';

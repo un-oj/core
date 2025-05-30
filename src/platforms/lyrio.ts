@@ -3,10 +3,10 @@
  * @module
  */
 
-import type { PlatformOptions } from '../platform';
-import type { Problem as BaseProblem } from '../problem';
-import { NotFoundError, Platform, UnexpectedResponseError } from '../platform';
-import { UnOJError } from '../utils';
+import type { PlatformOptions } from '../platform.ts';
+import type { Problem as BaseProblem } from '../problem.ts';
+import { NotFoundError, Platform, UnexpectedResponseError } from '../platform.ts';
+import { UnOJError } from '../utils.ts';
 
 export type ProblemType = 'Traditional' | 'SubmitAnswer' | 'Interaction';
 

@@ -1,12 +1,9 @@
-import { defineBuildConfig } from 'unbuild';
+import { defineBuildConfig } from 'obuild/config';
 
 export default defineBuildConfig({
-  declaration: true,
   entries: [{
+    type: 'transform',
     input: './src',
     outDir: './dist',
-    format: 'esm',
-    ext: 'js',
-    builder: 'mkdist',
   }],
 });

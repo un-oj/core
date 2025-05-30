@@ -3,11 +3,11 @@
  * @module
  */
 
-import type { PlatformOptions } from '../platform';
-import type { Problem as BaseProblem, ProblemIOSample } from '../problem';
+import type { PlatformOptions } from '../platform.ts';
+import type { Problem as BaseProblem, ProblemIOSample } from '../problem.ts';
 import { FetchError } from 'ofetch';
-import { NotFoundError, Platform, UnexpectedResponseError } from '../platform';
-import { getFirstKey, UnOJError } from '../utils';
+import { NotFoundError, Platform, UnexpectedResponseError } from '../platform.ts';
+import { getFirstKey, UnOJError } from '../utils.ts';
 
 export type ProblemType = 'traditional' | 'interactive' | 'submission' | 'objective';
 

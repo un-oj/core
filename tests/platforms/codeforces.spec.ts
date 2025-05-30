@@ -2,7 +2,7 @@ import { NotFoundError } from '@un-oj/core';
 import Codeforces from '@un-oj/core/platforms/codeforces';
 import { UnOJError } from '@un-oj/core/utils';
 import { describe, expect, it } from 'bun:test';
-import { assertProblem } from './utils';
+import { assertProblem } from './utils.ts';
 
 const TIMEOUT = 10 * 1000;
 

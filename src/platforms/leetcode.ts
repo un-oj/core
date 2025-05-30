@@ -3,12 +3,12 @@
  * @module
  */
 
-import type { PlatformOptions } from '../platform';
-import type { Problem as BaseProblem, ProblemIOSample } from '../problem';
+import type { PlatformOptions } from '../platform.ts';
+import type { Problem as BaseProblem, ProblemIOSample } from '../problem.ts';
 import { load } from 'cheerio';
 import { FetchError } from 'ofetch';
-import { NotFoundError, Platform, UnexpectedResponseError } from '../platform';
-import { UnOJError } from '../utils';
+import { NotFoundError, Platform, UnexpectedResponseError } from '../platform.ts';
+import { UnOJError } from '../utils.ts';
 
 export type Difficulty = 'Easy' | 'Medium' | 'Hard';
 

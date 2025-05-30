@@ -1,7 +1,7 @@
 import { NotFoundError } from '@un-oj/core';
 import MXOJ from '@un-oj/core/platforms/mxoj';
 import { describe, expect, it } from 'bun:test';
-import { assertProblem } from './utils';
+import { assertProblem } from './utils.ts';
 
 describe('MXOJ platform', () => {
   const mx = new MXOJ();

@@ -1,7 +1,7 @@
 import { NotFoundError } from '@un-oj/core';
 import Luogu from '@un-oj/core/platforms/luogu';
 import { describe, expect, it } from 'bun:test';
-import { assertProblem } from './utils';
+import { assertProblem } from './utils.ts';
 
 describe('Luogu platform (problem)', () => {
   const luogu = new Luogu();

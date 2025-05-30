@@ -3,12 +3,12 @@
  * @module
  */
 
-import type { Contest as BaseContest } from '../contest';
-import type { PlatformOptions } from '../platform';
-import type { Problem as BaseProblem, ProblemDescriptionObject, TagInfo } from '../problem';
+import type { Contest as BaseContest } from '../contest.ts';
+import type { PlatformOptions } from '../platform.ts';
+import type { Problem as BaseProblem, ProblemDescriptionObject, TagInfo } from '../problem.ts';
 import { FetchError } from 'ofetch';
-import { NotFoundError, Platform } from '../platform';
-import { addHeaders, UnOJError } from '../utils';
+import { NotFoundError, Platform } from '../platform.ts';
+import { addHeaders, UnOJError } from '../utils.ts';
 
 export type ProblemType = 'traditional' | 'interactive' | 'communication' | 'submission';
 export type Difficulty = 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7;
