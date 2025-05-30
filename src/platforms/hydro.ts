@@ -7,7 +7,7 @@ import type { PlatformOptions } from '../platform';
 import type { Problem as BaseProblem, ProblemIOSample } from '../problem';
 import { FetchError } from 'ofetch';
 import { NotFoundError, Platform, UnexpectedResponseError } from '../platform';
-import { addHeaders, getFirstKey, UnOJError } from '../utils';
+import { getFirstKey, UnOJError } from '../utils';
 
 export type ProblemType = 'traditional' | 'interactive' | 'submission' | 'objective';
 
@@ -70,16 +70,7 @@ export const DEFAULT_BASE_URL = 'https://hydro.ac';
 /** HydroOJ platform. */
 export default class Hydro extends Platform<string> {
   constructor(options?: PlatformOptions<string>) {
-    super({
-      ...options,
-      ofetchDefaults: {
-        ...options?.ofetchDefaults,
-        headers: addHeaders(
-          options?.ofetchDefaults?.headers,
-          [['accept', 'application/json']],
-        ),
-      },
-    }, DEFAULT_BASE_URL);
+    super(options, DEFAULT_BASE_URL);
   }
 
   /**
@@ -92,7 +83,10 @@ export default class Hydro extends Platform<string> {
 
     try {
       data = await this.ofetch(path, {
-        params: { pjax: 1 },
+        query: { pjax: 1 },
+        headers: {
+          accept: 'application/json',
+        },
         responseType: 'json',
       });
     } catch (e) {

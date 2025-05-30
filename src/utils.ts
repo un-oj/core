@@ -27,6 +27,7 @@ const MEMORY_UNITS: Record<string, number> = {
   megabyte: 1024 * 1024,
   megabytes: 1024 * 1024,
   MB: 1024 * 1024,
+  MiB: 1024 * 1024,
 };
 
 /**

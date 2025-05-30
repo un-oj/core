@@ -19,7 +19,16 @@ export interface PlatformOptions<Locale extends string | never = never> {
   locale?: Locale
 }
 
-/** An Online Judge platform. */
+/**
+ * The base class for all platforms.
+ * Checkout the properties and methods to see what's available.
+ *
+ * ## Conventions
+ *
+ * - When a method is not implemented, it should throw an {@link UnsupportedError}.
+ * - When a resource is not found, it should throw a {@link NotFoundError}.
+ * - When the response is unexpected, it should throw an {@link UnexpectedResponseError}.
+ */
 export abstract class Platform<Locale extends string | never = never> {
   readonly ofetch: $Fetch;
   readonly baseURL: string;
