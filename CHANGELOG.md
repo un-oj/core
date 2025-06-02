@@ -1,5 +1,23 @@
 # Changelog
 
+## 0.3.0 (2025-06-02)
+
+### ⚠️ Breaking Changes
+
+- The `Tag` generic of `Problem` doesn't allow `number[]` anymore. Use `TagInfo[]` instead
+- `DEFAULT_BASE_URL` of each platform is moved out of the class. You can directly import it from the platform module
+- **luogu:** `Problem#tags` is now `TagInfo[]` instead of `number[]`
+
+### 🚀 Features
+
+- Add Hydro platform
+- Add LeetCode platform
+- Add Lyrio platform
+- Add `Platform#getContest` to get contest information
+- **atcoder:** Compat with new memory limit format
+- **luogu:** Support `Platform#getContest`
+- **luogu:** Correct problem description when some of its sections aren't complete. Non-existing sections are now `''` instead of `null`
+
 ## 0.2.0 (2025-05-04)
 
 More platforms are [on the roadmap](https://github.com/un-oj/core/issues/3). Contributions are welcome!

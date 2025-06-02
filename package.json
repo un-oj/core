@@ -1,7 +1,7 @@
 {
   "name": "un-oj",
   "type": "module",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Unified Online Judge information collector.",
   "author": "UnOJ Team",
   "license": "MIT",
@@ -17,21 +17,21 @@
   ],
   "exports": {
     ".": {
-      "types": "./dist/index.d.ts",
-      "import": "./dist/index.js"
+      "types": "./dist/index.d.mts",
+      "import": "./dist/index.mjs"
     },
     "./package.json": "./package.json",
     "./platforms/*": {
-      "types": "./dist/platforms/*.d.ts",
-      "import": "./dist/platforms/*.js"
+      "types": "./dist/platforms/*.d.mts",
+      "import": "./dist/platforms/*.mjs"
     }
   },
   "publishConfig": {
     "provenance": true,
     "access": "public"
   },
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.mts",
   "files": [
     "LICENSE",
     "README.md",
