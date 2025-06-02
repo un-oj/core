@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.1 (2025-06-02)
+
+### 🩹 Bug Fixes
+
+- Fix Node.js subpath import issue
+
 ## 0.3.0 (2025-06-02)
 
 ### ⚠️ Breaking Changes
