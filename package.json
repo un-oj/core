@@ -21,9 +21,33 @@
       "import": "./dist/index.mjs"
     },
     "./package.json": "./package.json",
-    "./platforms/*": {
-      "types": "./dist/platforms/*.d.mts",
-      "import": "./dist/platforms/*.mjs"
+    "./platforms/atcoder": {
+      "types": "./dist/platforms/atcoder.d.mts",
+      "import": "./dist/platforms/atcoder.mjs"
+    },
+    "./platforms/codeforces": {
+      "types": "./dist/platforms/codeforces.d.mts",
+      "import": "./dist/platforms/codeforces.mjs"
+    },
+    "./platforms/hydro": {
+      "types": "./dist/platforms/hydro.d.mts",
+      "import": "./dist/platforms/hydro.mjs"
+    },
+    "./platforms/leetcode": {
+      "types": "./dist/platforms/leetcode.d.mts",
+      "import": "./dist/platforms/leetcode.mjs"
+    },
+    "./platforms/lyrio": {
+      "types": "./dist/platforms/lyrio.d.mts",
+      "import": "./dist/platforms/lyrio.mjs"
+    },
+    "./platforms/luogu": {
+      "types": "./dist/platforms/luogu.d.mts",
+      "import": "./dist/platforms/luogu.mjs"
+    },
+    "./platforms/mxoj": {
+      "types": "./dist/platforms/mxoj.d.mts",
+      "import": "./dist/platforms/mxoj.mjs"
     }
   },
   "publishConfig": {
