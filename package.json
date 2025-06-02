@@ -16,46 +16,16 @@
     "competitive-programming"
   ],
   "exports": {
-    ".": {
-      "types": "./dist/index.d.mts",
-      "import": "./dist/index.mjs"
-    },
+    ".": "./dist/index.js",
     "./package.json": "./package.json",
-    "./platforms/atcoder": {
-      "types": "./dist/platforms/atcoder.d.mts",
-      "import": "./dist/platforms/atcoder.mjs"
-    },
-    "./platforms/codeforces": {
-      "types": "./dist/platforms/codeforces.d.mts",
-      "import": "./dist/platforms/codeforces.mjs"
-    },
-    "./platforms/hydro": {
-      "types": "./dist/platforms/hydro.d.mts",
-      "import": "./dist/platforms/hydro.mjs"
-    },
-    "./platforms/leetcode": {
-      "types": "./dist/platforms/leetcode.d.mts",
-      "import": "./dist/platforms/leetcode.mjs"
-    },
-    "./platforms/lyrio": {
-      "types": "./dist/platforms/lyrio.d.mts",
-      "import": "./dist/platforms/lyrio.mjs"
-    },
-    "./platforms/luogu": {
-      "types": "./dist/platforms/luogu.d.mts",
-      "import": "./dist/platforms/luogu.mjs"
-    },
-    "./platforms/mxoj": {
-      "types": "./dist/platforms/mxoj.d.mts",
-      "import": "./dist/platforms/mxoj.mjs"
-    }
+    "./platforms/*": "./dist/platforms/*.js"
   },
   "publishConfig": {
     "provenance": true,
     "access": "public"
   },
-  "module": "./dist/index.mjs",
-  "types": "./dist/index.d.mts",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "LICENSE",
     "README.md",
@@ -63,7 +33,7 @@
   ],
   "scripts": {
     "prepare": "husky",
-    "build": "obuild",
+    "build": "tsdown",
     "dev": "bun ./scripts/dev.ts",
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
@@ -82,7 +52,7 @@
     "@types/bun": "^1.2.10",
     "eslint": "^9.24.0",
     "husky": "^9.1.7",
-    "obuild": "^0.2.1",
+    "tsdown": "^0.12.5",
     "typescript": "^5.8.3"
   }
 }
