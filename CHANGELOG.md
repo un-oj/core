@@ -1,5 +1,11 @@
 # Changelog
 
+## 0.3.2 (2025-06-02)
+
+### 🩹 Bug Fixes
+
+- Fix Node.js JSON import issue
+
 ## 0.3.1 (2025-06-02)
 
 ### 🩹 Bug Fixes
