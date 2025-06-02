@@ -14,8 +14,11 @@
 - Add LeetCode platform
 - Add Lyrio platform
 - Add `Platform#getContest` to get contest information
-- **atcoder:** Compat with new memory limit format
 - **luogu:** Support `Platform#getContest`
+
+### 🩹 Bug Fixes
+
+- **atcoder:** Compat with new memory limit format
 - **luogu:** Correct problem description when some of its sections aren't complete. Non-existing sections are now `''` instead of `null`
 
 ## 0.2.0 (2025-05-04)
